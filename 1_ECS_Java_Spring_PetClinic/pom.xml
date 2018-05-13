@@ -13,7 +13,7 @@
     <properties>
         <!-- Generic properties -->
         <java.version>1.8</java.version>
-        <docker.registry.host>${env.docker_registry_host}</docker.registry.host>
+        <docker.registry.host>${env.DOCKER_REGISTRY_HOST}</docker.registry.host>
     </properties>
     <dependencies>
         <dependency>
@@ -85,10 +85,10 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>0.4.13</version>
                 <configuration>
-                    <imageName>${env.docker_registry_host}/${project.artifactId}</imageName>
+                    <imageName>${env.DOCKER_REGISTRY_HOST}/${project.artifactId}</imageName>
                     <dockerDirectory>src/main/docker</dockerDirectory>
                     <useConfigFile>true</useConfigFile>
-                    <registryUrl>${env.docker_registry_host}</registryUrl>
+                    <registryUrl>${env.DOCKER_REGISTRY_HOST}</registryUrl>
                     <!--dockerHost>https://${docker.registry.host}</dockerHost-->
                     <resources>
                         <resource>
